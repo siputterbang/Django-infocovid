@@ -1,0 +1,29 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'body'%}
+<table class="table table-striped">
+    <thead >
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Harga Swab</th>
+            <th scope="col">Harga Rapid</th>
+            <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for hargaedit in editharga%}
+        <tr class=" table-light">
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{hargaedit.daerah}}</td>
+            <td>Rp.{{hargaedit.hargaSwab}}</td>
+            <td>Rp.{{hargaedit.hargaRapid}}</td>
+            <td><a class="btn btn-danger" href="{%url 'harga:hapus' hargaedit.id%}">Hapus</a>    <a class="btn btn-warning" href="{%url 'harga:edit' hargaedit.id%}">Edit</a></td>
+            
+        </tr>
+        {%endfor%}
+    </tbody>
+    <a class="btn btn-success" href="{%url 'harga:inputharga'%}">Tambah Harga</a>
+</table>
+{%endblock 'body'%}

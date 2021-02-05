@@ -1,0 +1,74 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}INFO{%endblock 'judul'%}
+{%block 'body'%}
+<!-- JumboProtokol -->
+<div class="jumbotron jumbotron-fluid bg-info">
+    <div class="container">
+      <h1 class="display-4 text-center">Protokol kesehatan</h1>
+      <p class="lead text-center">Ada beberapa hal yang dapat Anda lakukan untuk mencegah atau membantu menghentikan penyebaran COVID-19</p>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/tutup_mulut.png' %}" class="d-block mx-auto" width="60">
+              <p class="card-text">Tutup mulut saat bersin/batuk dengan tisu atau gunakan masker. Buang tisu atau masker pada tempat sampah tertutup</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/cuci_tangan.png' %}" class="d-block mx-auto" width="60">
+              <p class="card-text">Cuci tangan dengan air dan sabun minimal 20 detik atau gunakan hand sanitizer berbasis alkohol minimal 60 persen. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/bersihkan_barang.png' %}" class="d-block mx-auto" width="60">
+              <p class="card-text">Bersihkan dan lakukan disinfeksi permukaan benda yang sering disentuh seperti smartphone, kunci, atau gagang pintu.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/makanan_sehat.png' %}" class="d-block mx-auto" width="60">
+              <p class="card-text">Terapkan pola hidup sehat dengan mengkonsumsi makanan-makanan bergizi dan rutih berolahraga.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- EndJumboProtokol; -->
+    <!-- CARDBerita -->
+    <div class="card-deck">
+      {%for info in data|slice:":3"  %}
+          <div class="card">
+          
+          <div class="card-body">
+            <img src="/media/{{info.FotoJudul}}" class="card-img-top d-block m-auto" alt="FOTO" style="width:350px; height:250px">
+              <h5 class="card-title">{{info.judul}}</h5>
+              {% if info.isi|length >= 29 %}
+              <p class="card-text">{{info.isi|truncatewords:29}}</p>
+              <a href="/info/tampilberita/{{info.id}}">Baca Selengkapnya</a>
+              {% else %}
+              <p class="card-text">{{info.isi}}</p>
+              <a href="/info/tampilberita/{{info.id}}">Baca Selengkapnya</a>
+              {% endif %}
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+      </div>
+      {%endfor %}
+    </div>
+  
+    <!-- EndCardBerita -->
+
+{%endblock 'body'%}
+    

@@ -1,0 +1,43 @@
+{%load static%}
+<nav class="navbar  navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Keadaan Darurat</span>
+  <a href="{%url 'info:darurat1'%}" class="btn btn-warning">Hubungi Pusat Medis Langsung</a>
+</nav>
+<nav class="navbar position-sticky sticky-top navbar-expand-lg bg-white" id="NavCustomCSSHeader">
+   
+    <!-- <a class="navbar-brand" href="#">
+      <img src="/static/logo-white.png">
+    </a> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+    <div class=" navbar" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto NavCustomCSS" >
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{%url 'map:indexmap'%}">Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{%url 'harga:indexharga'%}">Harga</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{%url 'info:indexinfo'%}">Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{%url 'index'%}">Utama</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{%url 'login:admin'%}">Panel Admin</a>
+        </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+            <div class="dropdown-menu">
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{%url 'karantina:indexkarantina'%}">Pusat Pelayanan Pasien COVID19</a>
+              <a class="dropdown-item" href="{%url 'login:logout'%}">Logout</a>
+            </div>
+          </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  
+</nav>

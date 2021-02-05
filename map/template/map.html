@@ -1,0 +1,57 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'custom_CSS'%}
+<link rel="stylesheet" href="{%static 'css/styale.css'%}">
+{%endblock 'custom_CSS'%}
+{%block 'body'%}
+        <!--Judul-->
+        <!-- <img class="card-img-top" src="{%static '/img/gunungkidul.jpeg'%}" alt="Card image cap">hehehe
+        <div class="slider" ">Data Terkait COVID-19 di D.I. Yogyakarta</div> -->
+        <div class="card mb-3">
+            <img class="card-img-top" src="{%static '/img/map/jogja.png'%}" alt="Card image cap" >
+          </div>
+        <!--tutup Judul-->
+        <!--kota button-->
+        <div class="card-header text-center ">
+            <a href="{%url 'map:indexmap'%}" class="btn btn-primary">Yogyakarta</a>
+
+            <a href="/map/kab/Bantul" class="btn btn-primary">Bantul</a>
+
+            <a href="/map/kab/Sleman" class="btn btn-primary">Sleman</a>
+
+            <a href="/map/kab/KulonProgo" class="btn btn-primary">KulonProgo</a>
+
+            <a href="/map/kab/Gunungkidul" class="btn btn-primary">Gunungkidul</a>
+        </div>
+        <!--Akhir kota button-->
+
+        <!-- Jumlah Kasus -->
+        <div class="card text-center ">
+
+            <div class="card-header text-center ">
+                {{Daerah}}
+            </div>
+
+            <body>
+                <p>Harapan kami semua masyarakat di DIY tetap waspada dan tidak panik, tetapi mengikuti arahan bapak Gubernur bahwa mengurangi keluar rumah bila tidak penting,mengurangi berkumpul dg banyak orang,rajin melakukan cuci tangan dg sabun dan air
+                    mengalir, meningkatkan stamina tubuh dg perilaku hidup bersih dan sehat. Juga sebagai komitmen keterbukaan informasi publik.</p>
+            </body>
+            
+            <div class="progress ">
+                <div class="progress-bar bg-danger " role="progressbar " style="width: {{DataPositif}}% " aria-valuenow="25 " aria-valuemin="0 " aria-valuemax="100 ">Kasus Aktif {{Positif}} orang</div>
+            </div><br>
+            <div class="progress ">
+                <div class="progress-bar bg-success " role="progressbar " style="width: {{DataSembuh}}% " aria-valuenow="50 " aria-valuemin="0 " aria-valuemax="100 ">kasus Sembuh {{Sembuh}} orang</div>
+            </div><br>
+            <div class="progress ">
+                <div class="progress-bar bg-info " role="progressbar " style="width: {{DataMeninggal}}%" aria-valuenow="100 " aria-valuemin="0 " aria-valuemax="100 ">Kasus Meninggal {{Meninggal}} orang</div>
+            </div><br>
+            <div class="card-footer text-muted ">
+                Diupdate: {{waktu}}
+            </div>
+
+        </div>
+        <!-- EndJumlah kasus -->
+
+{%endblock 'body'%}

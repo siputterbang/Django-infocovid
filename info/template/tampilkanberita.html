@@ -1,0 +1,24 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'body'%}
+<div class="card-deck d-block mx-auto mt-2">
+    <div class="card-body d-block mx-auto mt-2">
+    {%for info in data%}
+            {% if info.id == dataid%}
+        <div class="card mr-1 ml-1">
+            <img src="/media/{{info.FotoJudul}}" class="card-img-top d-block mx-auto mt-5" alt="FOTO" style="width:350px; height:250px">
+            <h3 class="card-title font-weight-bold text-center">{{info.judul}}</h3>
+            <p class="card-text text-justify text-center">{{info.isi}} </p>
+        </div>
+
+            {% endif %}
+           
+
+    </div>
+    {%endfor %}
+    </div>
+ 
+
+    {%endblock 'body'%}
+    

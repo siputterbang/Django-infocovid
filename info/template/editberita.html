@@ -1,0 +1,27 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'body'%}
+<table class="table table-striped">
+    <thead >
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Judul</th>
+            <th scope="col">Edit</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {%for beritaedit in databerita%}
+        <tr class=" table-light">
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{beritaedit.judul}}</td>
+            <td><a class="btn btn-danger" href="{%url 'info:hapus' beritaedit.id%}">Hapus</a> <a class="btn btn-warning" href="{%url 'info:beritaedit' beritaedit.id%}">Edit</a></td>
+           
+            
+        </tr>
+        {%endfor%}
+        <a class="btn btn-info" href="{%url 'info:buatberita'%}">Tambah Berita</a>
+    </tbody>
+</table>
+{%endblock 'body'%}

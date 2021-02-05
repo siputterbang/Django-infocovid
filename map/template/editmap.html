@@ -1,0 +1,36 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'custom_CSS'%}
+<link rel="stylesheet" href="{%static 'css/styale.css'%}">
+{%endblock 'custom_CSS'%}
+{%block 'body'%}
+<table class="table table-striped">
+    <thead >
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Daerah</th>
+            <th scope="col">Sembuh</th>
+            <th scope="col">Meninggal</th>
+            <th scope="col">Positif</th>
+            <th scope="col">edit</th>
+            <th scope="col">edit</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {%for pasien in editpasien%}
+        <tr class="table-light">
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{pasien.daerah}}</td>
+            <td>{{pasien.P_Positif}}</td>
+            <td>{{pasien.P_Meninggal}}</td>
+            <td>{{pasien.P_Sembuh}}</td>
+            <td><a class="btn btn-danger" href="{%url 'map:hapus' pasien.id%}">Hapus</a></td>
+            <td><a class="btn btn-warning" href="{%url 'map:edit' pasien.id%}">Edit</a></td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+
+{%endblock 'body'%}

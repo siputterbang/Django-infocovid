@@ -1,0 +1,20 @@
+
+
+<div class="card-deck">
+    {%for info in data|slice:":3"  %}
+        <div class="card">
+        <img src="/templates/food.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{info.judul}}</h5>
+            {% if info.isi|length >= 29 %}
+            <p class="card-text">{{info.isi|truncatewords:29}}</p>
+            <a href="tampilberita/{{info.id}}">a</a>
+            {% else %}
+            <p class="card-text">{{info.isi}}</p>
+            {% endif %}
+           
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    {%endfor %}
+    </div>

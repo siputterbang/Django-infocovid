@@ -1,0 +1,19 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'body'%}
+    <div class="container mt-3 mb-5">
+    <form  method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {%for form in post_form%}
+        <div class="form-group">
+            {{form.label}}
+            {{form}}
+        </div>
+        {%endfor%}
+        <!-- <input type="file" name="FotoJudul"> -->
+        <button class="btn btn-primary">Kirim</button> <a class="btn btn-success" href="{%url 'info:edit' %}">Kembali Ke List Berita</a>
+    </form>
+    
+    </div>
+{%endblock 'body'%}

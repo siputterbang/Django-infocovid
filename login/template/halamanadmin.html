@@ -1,0 +1,68 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}Halaman Admin{%endblock 'judul'%}
+
+{%block 'body'%}
+<div id="accordion">
+    <div class="card">
+      <div class="card-header bg-dark" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Info Covid
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <a href="{%url 'info:buatberita'%}" class="btn btn-success btn-lg active" role="button" aria-pressed="true"> Tambah</a>
+            <a href="{%url 'info:edit'%}" class="btn btn-warning btn-lg " role="button" aria-pressed="true"> Edit</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header bg-dark" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Harga Tes
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <a href="{%url 'harga:inputharga'%}" class="btn btn-success btn-lg active" role="button" aria-pressed="true"> Tambah</a>
+            <a href="{%url 'harga:hargaedit'%}" class="btn btn-warning btn-lg " role="button" aria-pressed="true"> Edit</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header bg-dark" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Data Pasien
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <a href="{%url 'map:inputMap'%}" class="btn btn-success btn-lg active" role="button" aria-pressed="true"> Tambah</a>
+            <a href="{%url 'map:listmap'%}" class="btn btn-warning btn-lg " role="button" aria-pressed="true"> Edit</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header bg-dark" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Lokasi Karantina & Rs Rujukan
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <a href="{%url 'karantina:inputkarantina'%}" class="btn btn-success btn-lg active" role="button" aria-pressed="true"> Tambah</a>
+            <a href="{%url 'karantina:listdatakarantina'%}" class="btn btn-warning btn-lg " role="button" aria-pressed="true"> Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock 'body'%}

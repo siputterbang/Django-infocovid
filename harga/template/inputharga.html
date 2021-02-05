@@ -1,0 +1,17 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'body'%}
+    <div class="container mt-3 mb-5">
+    <form  method="post">
+        {%csrf_token%}
+        {%for form in post_formHarga%}
+        <div class="form-group">
+            {{form.label}}
+            {{form}}
+        </div>
+        {%endfor%}
+        <button class="btn btn-primary">Kirim</button>    <a class="btn btn-success" href="{%url 'harga:hargaedit'%}">Kembali Ke List harga</a>
+    </form>
+    </div>
+{%endblock 'body'%}

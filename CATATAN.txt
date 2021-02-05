@@ -1,0 +1,25 @@
+user: faza
+pass: amikomyogyakarta
+
+
+user admin full akses:
+user: abifadli
+pass: 1234567890
+
+Dependencies[saat dijalankan di linux]:
+django
+mysqlclient
+
+mohon konfigurasi static url & dir  menyesuaikan dengan folder anda pada file infocovid/settings.py
+'[lokasi folder anda]/infocovid/static/'
+    
+
+konfigurasi  DBMS ada di
+infocovid/settings.py
+
+nama database: 
+djangomain.sql
+
+NB: semua berjalan lancar di linux [manjaro],untuk windows belum mencoba
+
+pada linux untuk bisa mengakses direktori mohon untuk menjalankan server dengan super user

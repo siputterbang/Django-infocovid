@@ -1,0 +1,29 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}INFO Karantina{%endblock 'judul'%}
+{%block 'body'%}
+<table class="table table-striped">
+  <thead >
+      <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Kabupaten</th>
+          <th scope="col">Kecamatan</th>
+          <th scope="col">Rumah Sakit Rujukan</th>
+          <th scope="col">Tempat Karantina</th>
+      </tr>
+  </thead>
+  <tbody>
+        {%for karantina in data%}
+            <tr >
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{karantina.Kabupaten}}</td>
+                <td>{{karantina.kecamatan}}</td>
+                <td>{{karantina.namaRS}}</td>
+                <td>{{karantina.namaTempatKarantina}}</td>
+            </tr>
+        {%endfor%}
+      
+  </tbody>
+</table>
+
+{%endblock 'body'%}

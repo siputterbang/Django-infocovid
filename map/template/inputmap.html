@@ -1,0 +1,21 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'custom_CSS'%}
+<link rel="stylesheet" href="{%static 'css/styale.css'%}">
+{%endblock 'custom_CSS'%}
+{%block 'body'%}
+<div class="container mt-3 mb-5">
+    <form  method="post">
+        {%csrf_token%}
+        {%for form in post_formMap%}
+        <div class="form-group">
+            {{form.label}}
+            {{form}}
+        </div>
+        {%endfor%}
+        <button class="btn btn-primary">Kirim</button>
+    </form>
+    </div>
+
+{%endblock 'body'%}

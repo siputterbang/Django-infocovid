@@ -1,0 +1,28 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'body'%}
+<table class="table table-borderless">
+    <thead class=" bg-info">
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Daerah</th>
+            <th scope="col">Harga Swab</th>
+            <th scope="col">Harga Rapid</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for harga in datahargadaerah%}
+        <tr class=" table-info">
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{harga.daerah}}</td>
+            <td>Rp.{{harga.hargaSwab}}</td>
+            <td>Rp.{{harga.hargaRapid}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<img src="{%static 'img/harga/covid19.png'%}" height="1024" width="1300" align="center" border="5️">
+<!-- End Tabel Harga -->
+
+{%endblock 'body'%}

@@ -1,0 +1,43 @@
+
+
+.NavCustomCSS{
+    
+    margin-right: 15%;
+    font-size:14px;
+    font-weight: bold;
+    
+
+}
+.NavCustomCSS li{
+    padding: 2%;
+}
+.NavCustomCSS a{
+    text-decoration: non;
+    color:white;
+}
+
+#NavCustomCSSHeader{
+    /* box-shadow: 0px 8px 10px rgba(0,0,0,0.3); */
+    
+    
+    /* rgb(159,4,4); */
+}
+#NavCustomCSSHeader a{
+    color:black; 
+    /* rgb(159,4,4); */
+}
+#JumboTronHeaderInfo{
+    background-color: white;
+}
+#InfoCovidHeaderInfo{
+    background-color: white;
+    top:-50px;
+}
+#InfoCovidHeaderInfo h5{
+    color: black;
+    font-weight: bold;
+}
+#ProtokolInfo h1{
+    color: black;
+    font-weight: bold;
+}

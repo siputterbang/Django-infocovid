@@ -1,0 +1,52 @@
+{%extends 'blueprin.html'%}
+{%load static%}
+{%block 'judul'%}{{judul}}{%endblock 'judul'%}
+{%block 'body'%}
+<div class="jumbotron jumbotron-fluid bg-info">
+    <div class="container">
+      <h1 class="display-4 text-center">Nomor Penting</h1>
+      <p class="lead text-center">Ada beberapa hal yang dapat Anda lakukan untuk mencegah atau membantu menghentikan penyebaran COVID-19</p>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/hospital1.png' %}" class="d-block mx-auto" width="60">
+              <h3 class="text-center">RSUD Wonosari</h3>
+              <p class="card-text text-center">0274-2228-8824</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/hospital2.png' %}" class="d-block mx-auto" width="60">
+              <h3 class="text-center">RSUD Bantul</h3>
+              <p class="card-text text-center">0274-3572-9024 </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/hospital3.png' %}" class="d-block mx-auto" width="60">
+              <h3 class="text-center">RSUD Sleman</h3>
+              <p class="card-text text-center">0274-2748-0056</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="{%static '/img/info/hospital4.png' %}" class="d-block mx-auto" width="60">
+              <h3 class="text-center">RSUD Yogyakarta</h3>
+              <p class="card-text text-center">0274-3356-6389</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+{%endblock 'body'%}
